@@ -5,6 +5,12 @@ const convertBtn = document.querySelector('.convert');
 const clearBtn = document.querySelector('.clear');
 const form = document.querySelector('form');
 const downloadBtn = document.querySelector(".download");
+const switchConverterBtn = document.querySelector('#btn-switch');
+const switcher = document.querySelector('.switch');
+
+const typeOfConversion = {
+    CSVtoJSON: false
+}
 
 
 convertBtn.addEventListener('click', (ev) => {
@@ -91,6 +97,40 @@ downloadBtn.addEventListener('click',(e) => {
     // Remove link from body
     document.body.removeChild(link);
 })
+
+
+switchConverterBtn.addEventListener('click', (ev) => {
+    switcher.classList.toggle('active');
+
+    if(!typeOfConversion.CSVtoJSON) {
+        typeOfConversion.CSVtoJSON = true;
+    } else {
+        typeOfConversion.CSVtoJSON = false;
+    }
+    changeUI()
+})
+
+function changeUI() {
+   if(typeOfConversion.CSVtoJSON) {
+       document.querySelector('.main-title').innerHTML = `<span class="accent">CSV</span> to
+       <span class="accent"> JSON</span> Converter`
+       document.querySelector('.json-label').textContent = "CSV"
+       document.querySelector('.csv-label').textContent = "JSON"
+       document.querySelector('legend').textContent = "paste CSV here"
+       document.querySelector('.json').placeholder= "Paste CSV here or upload file";
+       document.querySelector('body').style.backgroundColor = '#456a6e';
+
+
+   } else {
+        document.querySelector('.main-title').innerHTML = `<span class="accent">JSON</span> to
+        <span class="accent"> CSV</span> Converter`
+        document.querySelector('.json-label').textContent = "JSON"
+        document.querySelector('.csv-label').textContent = "CSV"
+        document.querySelector('legend').textContent = "paste JSON here"
+        document.querySelector('.json').placeholder= "Nested JSON structures are not supported";
+        document.querySelector('body').style.backgroundColor = '#bbe4e9';
+   }
+}
 
  
 function alertUser(className,message) {

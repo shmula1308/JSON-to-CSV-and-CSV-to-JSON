@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/prism.css" />
     <script src="js/prism.js"></script>
     <script src="js/script.js" defer></script>
-    <title>JSON to CSV Converter</title>
+    <title>JSON2CSV & CSV2JSON Converter</title>
   </head>
   <body>
     <h1 class="main-title">
@@ -24,7 +24,7 @@
     <div class="swap-btn-container">
       <label for="btn-switch">JSON2CSV</label>
       <div class="btn-container" id="btn-switch">
-        <span class="swicth"></span>
+        <span class="switch"></span>
       </div>
       <label for="btn-switch">CSV2JSON</label>
     </div>
@@ -34,7 +34,7 @@
         <form>
           <div class="form-container">
             <div class="data-container">
-              <label for="json-data" class="data-label">JSON</label>
+              <label for="json-data" class="data-label json-label">JSON</label>
               <fieldset class="json-fieldset">
                 <legend>paste JSON here</legend>
                 <textarea
@@ -66,7 +66,7 @@
               <button type="button" class="btn clear"><i></i>Clear</button>
             </div>
             <div class="data-container">
-              <label for="csv-data" class="data-label">CSV</label>
+              <label for="csv-data" class="data-label csv-label">CSV</label>
               <fieldset>
                 <legend>RESULT</legend>
                 <textarea
