@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/prism.css" />
+    <script src="js/prism.js"></script>
+    <script src="js/script.js" defer></script>
+    <title>JSON to CSV Converter</title>
+  </head>
+  <body>
+    <h1 class="main-title">
+      <span class="accent">JSON</span> to
+      <span class="accent"> CSV</span> Converter
+    </h1>
+    <div class="swap-btn-container">
+      <label for="btn-switch">JSON2CSV</label>
+      <div class="btn-container" id="btn-switch">
+        <span class="swicth"></span>
+      </div>
+      <label for="btn-switch">CSV2JSON</label>
+    </div>
+    <div class="alert"></div>
+    <div class="page-container">
+      <div class="app-container">
+        <form>
+          <div class="form-container">
+            <div class="data-container">
+              <label for="json-data" class="data-label">JSON</label>
+              <fieldset class="json-fieldset">
+                <legend>paste JSON here</legend>
+                <textarea
+                  name="json-data"
+                  id="json-data"
+                  cols="30"
+                  rows="10"
+                  class="json"
+                  placeholder="Nested JSON structures are not supported"
+                  spellcheck="false"
+                ></textarea>
+              </fieldset>
+              <button class="btn file-btn">
+                <i class="fas fa-upload"></i><br />UPLOAD FILE
+                <input type="file" class="upload-file-input" accept=".json" />
+              </button>
+              <!-- <div class="url-input-container">
+                <label for="json-file-path">Local file path</label>
+                <input
+                  type="text"
+                  id="json-file-path"
+                  placeholder="local url..."
+                />
+                <button type="button" class="btn url-btn">Submit</button>
+              </div> -->
+            </div>
+            <div class="btns-container">
+              <button type="button" class="btn convert"><i></i>Convert</button>
+              <button type="button" class="btn clear"><i></i>Clear</button>
+            </div>
+            <div class="data-container">
+              <label for="csv-data" class="data-label">CSV</label>
+              <fieldset>
+                <legend>RESULT</legend>
+                <textarea
+                  name="csv-data"
+                  id="csv-data"
+                  cols="30"
+                  rows="10"
+                  placeholder="Shpend"
+                  class="csv"
+                  spellcheck="false"
+                >
+                </textarea>
+              </fieldset>
+              <button class="btn file-btn download" download>
+                <i class="fas fa-download"></i></br>DOWNLOAD FILE
+              </button>
+              <!-- <button class="btn">Name of uploaded file</button> or change button text above-->
+              <!-- <div class="url-input-container">
+                <label for="csv-path-save">Local file path</label>
+                <input
+                  type="text"
+                  id="csv-path-save"
+                  placeholder="local url..."
+                />
+                <button type="button" class="btn url-btn">Save</button>
+              </div> -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
